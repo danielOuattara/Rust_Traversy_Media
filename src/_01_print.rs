@@ -18,7 +18,6 @@ pub fn run() {
     );
 
     // Placeholder traits
-
     println!("Binary: {:b}", 23);
     println!("Octal: {:o}", 23);
     println!("Hexadecimal: {:x}", 23);
