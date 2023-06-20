@@ -25,6 +25,6 @@ pub fn run() {
     // placeholder debug trait
     println!("country: {:?}", "Afghanistan");
 
-    // Basic Math : todo, to easy, forget
+    // Basic Math : todo, too easy, forget
     println!("-------------------------------------------");
 }

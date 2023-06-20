@@ -1,12 +1,13 @@
 pub fn run() {
     // primitive types
     /*
-    integers
-    floats
-    boolean
-    characters
+    Integers: u8, u16, u32, u64, u128, i8, i16, i32, i64, i128
+    Floats:f32, f64
+    Boolean (bool)
+    Characters (char)
     Tuples
-    Arrays
+    Arrays (fixed length)
+    Vectors (growable)
     */
 
     // Default integer is i32
@@ -19,9 +20,11 @@ pub fn run() {
     let _y: f64 = 3.14;
 
     // find max size
-
     let _x: i32 = i32::MAX;
+    println!("i32::MAX = {_x}");
+
     // OR
+
     println!("Max for i32 : {}", std::i32::MAX);
     println!("Max for i64 : {}", std::i64::MAX);
 
