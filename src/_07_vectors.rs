@@ -1,0 +1,85 @@
+// Vectors : resizable arrays
+
+use std::mem;
+
+pub fn run() {
+    //declare a vector
+
+    let vector_1 = &mut vec![1, 2, 3, 4, 5]; // auto inference
+    let vector_2: Vec<i32> = vec![6, 7, 8, 9]; // manual inference
+
+    println!("{:?}", vector_1);
+    println!("{:?}", vector_2);
+
+    let heros_name = vec!["John Snow", "Deanearys Targarean", "Rod Stewart"];
+    println!("{:?}", heros_name);
+
+    // get single value
+
+    println!("First hero is {:?}", heros_name[0]);
+    println!("First hero is {}", heros_name[0]); // see the difference !
+
+    // re-assign
+
+    let mut pets_name = vec!["kriko", "georges", "doudou"];
+    println!("{:?}", pets_name);
+
+    pets_name[2] = "kiss-kiss";
+    println!("{:?}", pets_name);
+
+    // add a element
+
+    pets_name.push("piou-piou");
+    println!("{:?}", pets_name);
+
+    // remove a element
+
+    pets_name.pop();
+    println!("{:?}", pets_name);
+
+    // get array length
+
+    println!("{}", pets_name.len());
+
+    // Array are stack allocated
+
+    println!("'vector_1' occupies {} bytes.", mem::size_of_val(&vector_1));
+    println!("'vector_2' occupies {} bytes.", mem::size_of_val(&vector_2));
+    println!(
+        "`heros_name occupies` {} bytes.",
+        mem::size_of_val(&heros_name)
+    );
+    println!(
+        "'pets_name' occupies {} bytes.",
+        mem::size_of_val(&pets_name)
+    );
+
+    //get slices
+
+    let slice_1 = &vector_1;
+    println!("slice_1 = {:?} ", slice_1);
+
+    // let _slice_2: &[i32; 4] = &vector_2;
+
+    let slice_1_bis = &vector_1[0..2];
+    println!("slice_1_bis = {:?} ", slice_1_bis);
+
+    // loop through
+
+    for pet in pets_name.iter() {
+        println!("{}", pet);
+    }
+
+    // OR
+
+    for pet in pets_name {
+        println!("{}", pet);
+    }
+
+    // Loop through and mutate
+
+    for item in vector_1.iter_mut() {
+        *item *= 3;
+    }
+    println!("vector_1 after mutation of its items = {:?}", vector_1);
+}
