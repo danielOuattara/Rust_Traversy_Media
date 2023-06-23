@@ -29,8 +29,8 @@ pub fn run() {
     println!("Max for i64 : {}", std::i64::MAX);
 
     // booleans
-    let _is_active = true;
-    let _is_pilot: bool = false;
+    let _is_active = true; // automatic inference
+    let _is_pilot: bool = false; // manual inference
 
     let _is_greater_than_5 = 10 > 5;
 
