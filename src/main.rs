@@ -16,7 +16,9 @@ cargo build --release: --> a ready for deployment
 // mod _09_loops;
 // mod _10_functions;
 // mod _11_pointer_ref;
-mod _12_structs;
+// mod _12_structs;
+// mod _13_enums;
+mod _14_cli;
 
 fn main() {
     // _01_print::run();
@@ -30,7 +32,9 @@ fn main() {
     // _09_loops::run(); // 01H07:00
     // _10_functions::run(); // 01H13:31
     // _11_pointer_ref::run(); // 01H13:31
-    _12_structs::run(); // 01H23:00
+    // _12_structs::run(); // 01H23:00
+    // _13_enums::run() // 01H38:00
+    _14_cli::run() // 01H43:00
 }
 
 // STOPPED @01h33
