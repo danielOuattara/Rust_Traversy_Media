@@ -8,7 +8,7 @@ struct Color {
     blue: u8,
 }
 
-/* tuple Struct : : 2
+/* tuple Struct :  2
 ---------------------- */
 struct ColorTuple(u8, u8, u8);
 
@@ -36,13 +36,19 @@ impl Person {
     }
 
     // update person first name
-
-    fn update_first_name(&mut self, new_first_name: String) {
-        self.first_name = new_first_name
+    fn update_first_name(&mut self, new_first_name: &str) {
+        self.first_name = new_first_name.to_string()
     }
 
-    fn update_last_name(&mut self, new_last_name: String) {
-        self.last_name = new_last_name
+    // update person last name
+    fn update_last_name(&mut self, new_last_name: &str) {
+        self.last_name = new_last_name.to_string()
+    }
+
+    // name as a tuple
+
+    fn name_as_tuple(self) -> (String, String) {
+        (self.first_name, self.last_name)
     }
 }
 
@@ -62,6 +68,7 @@ pub fn run() {
     );
 
     color_1.red = 200;
+
     println!(
         "color_1 is rgb({}, {}, {})",
         color_1.red, color_1.green, color_1.blue
@@ -99,9 +106,11 @@ pub fn run() {
 
     person_2.get_full_name(); // John Doe
 
-    person_2.update_first_name("Simon".to_owned());
+    person_2.update_first_name("Simon");
     person_2.get_full_name(); // John Simon
 
-    person_2.update_last_name("Django".to_owned());
+    person_2.update_last_name("Django");
     person_2.get_full_name(); //  Simon Django
+
+    println!("{:?}", person_2.name_as_tuple());
 }
